@@ -5,6 +5,8 @@ body {
     line-height: 1.5em;
 }
 
+/* site wrap for all pages(removed commas on the grid-template-area &
+ added pixels to prevent pages from looking different) */
 #site_wrap {
 
     background-color: white;
@@ -13,13 +15,24 @@ body {
     grid-template-columns:
         1fr repeat(4, minmax(0,272px)) 1fr;
     grid-gap: 5px;
-    grid-template-rows: 142px 294px ,373,  min-content 1fr;
+    grid-template-rows: 90px 200px min-content 1fr;
     grid-template-areas:
-        ". header header header header ."  
+        "header header header header header header"  
         "main main main main main main" 
-        ". featured_header featured_header featured_header featured_profile ."
+        ". featured_header featured_header featured_header featured_header ."
         
-        ". content  content content content. "
+        " content content content content content. "
+        "footer footer footer footer footer footer";
+}
+
+/* blog page site_wrap (added another featured_profile to prevent page from going to far right) */
+.blog #site_wrap {
+    grid-template-areas:
+        "header header header header header header"  
+        "main main main main main main" 
+        ". featured_header featured_header featured_profile featured_profile ."
+        
+        ". content content content content. "
         "footer footer footer footer footer footer";
 }
 
